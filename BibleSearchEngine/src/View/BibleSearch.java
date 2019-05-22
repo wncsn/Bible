@@ -212,7 +212,7 @@ public static InvertedIndex getIndex() {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         tmbh jfrm2= new tmbh();
-            jfrm2.setSize(500, 250); 
+            jfrm2.setSize(500, 350); 
             jfrm2.setVisible(true);
             this.setVisible(false);
             this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
