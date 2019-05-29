@@ -206,6 +206,7 @@ public static InvertedIndex getIndex() {
                 TabelSearch.setValueAt(listDocs.get(i).getId(), x, 0);
                 TabelSearch.setValueAt(listDocs.get(i).getNamaDokumen(), x, 1);
                 TabelSearch.setValueAt(listDocs.get(i).getContent(), x, 2);
+            x++;
             }
         }
     }//GEN-LAST:event_SearchButtonActionPerformed
