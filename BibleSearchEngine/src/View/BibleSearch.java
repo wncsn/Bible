@@ -49,63 +49,63 @@ public static InvertedIndex getIndex() {
 
         TabelSearch.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID Dokumen", "Judul"
+                "ID", "Judul", "Isi"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -191,6 +191,7 @@ public static InvertedIndex getIndex() {
         for (int i = 0; i < TabelSearch.getRowCount(); i++) {
             TabelSearch.setValueAt("", i, 0);
             TabelSearch.setValueAt("", i, 1);
+            TabelSearch.setValueAt("", i, 2);
         }
         index.makeDictionaryWithTermNumber();
         String query = SearchQuery.getText();
@@ -204,7 +205,7 @@ public static InvertedIndex getIndex() {
             if (getIndex().getCosineSimilarity(queryPostingList, PostingDokumen) > 0) {
                 TabelSearch.setValueAt(listDocs.get(i).getId(), x, 0);
                 TabelSearch.setValueAt(listDocs.get(i).getNamaDokumen(), x, 1);
-                x++;
+                TabelSearch.setValueAt(listDocs.get(i).getContent(), x, 2);
             }
         }
     }//GEN-LAST:event_SearchButtonActionPerformed

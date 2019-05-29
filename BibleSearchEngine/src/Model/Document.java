@@ -65,6 +65,19 @@ public class Document implements Comparable<Document> {
         this.realContent = content;
     }
 
+    public Document(int id, String realContent, String namaDokumen) {
+        this.id = id;
+        this.realContent = realContent;
+        this.namaDokumen = namaDokumen;
+    }
+
+    public Document(int id, String content, String realContent, String namaDokumen) {
+        this.id = id;
+        this.content = content;
+        this.realContent = realContent;
+        this.namaDokumen = namaDokumen;
+    }
+
     @Override
     public String toString() {
         return "Document{" + "id=" + id + ", content=" + content + ", realContent=" + realContent + '}';
